@@ -14,19 +14,19 @@ export class AppComponent {
 
  listPost1 = [
   	{
-  		title: 'MonPremierPost', 
+  		title: 'Mon Premier Post', 
   		content: 'Vous allez créer une application simple de type blog.  Cette application va afficher les posts du blog, et chaque post aura un bouton permettant de "love it" ou de "dont love it".  Chaque post aura la forme suivante : ', 
   		loveIts: 0,
   		created_at: new Date()
   	},
   	{
-  		title: 'MonDeixièmePost', 
+  		title: 'Mon Deuxième Post', 
   		content: 'Vous allez créer une application simple de type blog.  Cette application va afficher les posts du blog, et chaque post aura un bouton permettant de "love it" ou de "dont love it".  Chaque post aura la forme suivante : ', 
   		loveIts: 0,
   		created_at: new Date()
   	},
   	{
-  		title: 'MonTroiièmePost', 
+  		title: 'Mon Troisième Post', 
   		content: 'Vous allez créer une application simple de type blog.  Cette application va afficher les posts du blog, et chaque post aura un bouton permettant de "love it" ou de "dont love it".  Chaque post aura la forme suivante : ', 
   		loveIts: 0,
   		created_at: new Date()
