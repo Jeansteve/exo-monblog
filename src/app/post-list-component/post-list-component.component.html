@@ -1,0 +1,7 @@
+<div class="row col-lg-12">
+		<app-post-list-item-component *ngFor="let post of listPost"
+		[title]="post.title"  
+		[content]="post.content" 
+		[loveIts]="post.loveIts" 
+	    [created_at]="post.created_at"> </app-post-list-item-component>
+</div>

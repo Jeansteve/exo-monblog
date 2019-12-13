@@ -1,0 +1,31 @@
+
+<div class="row col-lg-12 post"  [ngClass]="{'greenBack': nbrLovIt > nbrDontLoveIt, 
+											 'redBack':  nbrLovIt < nbrDontLoveIt, 
+											 'normalBack':  nbrLovIt == nbrDontLoveIt	}">
+	<div class="row col-lg-12" [ngClass]="{'greenText': nbrLovIt > nbrDontLoveIt, 
+											 'redText':  nbrLovIt < nbrDontLoveIt, 
+											 'normalText':  nbrLovIt == nbrDontLoveIt	}">
+		<h3 class="col-lg-8" align="left">{{  title }}</h3>
+		<div class="col-lg-4" align="right">{{  created_at | date: 'short' }}</div>
+		<p class="row col-lg-12" align="left">{{ content }}</p>
+	</div>
+	<div class="row col-lg-12">
+		<button type="button" class="btn btn-success" (click)="addLovIt()">Love it</button>
+		<button type="button" class="btn btn-danger" (click)="addDontLovIt()">Don't love it</button>
+	</div>
+</div>
+<!-- 
+<div class="row col-lg-12 post"  [ngStyle]="{backgroundColor: getDivColor()}">
+	<div class="row col-lg-12" [ngStyle]="getContentColor()">
+		<h3 class="col-lg-8" align="left">{{  title }}</h3>
+		<div class="col-lg-4" align="right">{{  created_at | date: 'short' }}</div>
+	</div>
+	<div class="row col-lg-12" [ngStyle]="getContentColor()">
+		<p align="left">{{ content }}</p>
+	</div>
+	<div class="row col-lg-12">
+		<button type="button" class="btn btn-success" (click)="addLovIt()">Love it</button>
+		<button type="button" class="btn btn-danger" (click)="addDontLovIt()">Don't love it</button>
+	</div>
+</div>
+ -->
