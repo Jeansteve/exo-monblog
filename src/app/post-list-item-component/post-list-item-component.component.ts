@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { PostsService } from '../services/posts.service';
+import { Post } from '../models/Post.model';
 
 @Component({
   selector: 'app-post-list-item-component',
@@ -10,22 +12,32 @@ export class PostListItemComponentComponent implements OnInit {
   nbrLovIt: number = 0;
   nbrDontLoveIt: number = 0;
 
-  @Input() title: string;
-  @Input() content: string;
-  @Input() loveIts: number;
-  @Input() created_at: Date;
+  // @Input() title: string;
+  // @Input() content: string;
+  // @Input() loveIts: number;
+  // @Input() created_at: Date;
 
-  constructor() { }
+  @Input() post: Post;
+
+  constructor(private postsService: PostsService) { }
 
   ngOnInit() {
+
   }
 
-  addLovIt() {
-  	this.nbrLovIt = this.nbrLovIt + 1;
+  addLoveIt() {
+    this.post.loveIts = this.post.loveIts + 1;
+    this.postsService.addLoveIt(this.post);
   }
 
-  addDontLovIt() {
-  	this.nbrDontLoveIt = this.nbrDontLoveIt + 1;
+  addDontLoveIt() {
+    this.post.dontLoveIt = this.post.dontLoveIt + 1;
+    this.postsService.emitPosts();
+    this.postsService.addLoveIt(this.post);
+  }
+
+  removePost() {
+    this.postsService.removePost(this.post);
   }
 
   // getDivColor() {

@@ -1,17 +1,22 @@
 
-<div class="row col-lg-12 post"  [ngClass]="{'greenBack': nbrLovIt > nbrDontLoveIt, 
-											 'redBack':  nbrLovIt < nbrDontLoveIt, 
-											 'normalBack':  nbrLovIt == nbrDontLoveIt	}">
-	<div class="row col-lg-12" [ngClass]="{'greenText': nbrLovIt > nbrDontLoveIt, 
-											 'redText':  nbrLovIt < nbrDontLoveIt, 
-											 'normalText':  nbrLovIt == nbrDontLoveIt	}">
-		<h3 class="col-lg-8" align="left">{{  title }}</h3>
-		<div class="col-lg-4" align="right">{{  created_at | date: 'short' }}</div>
-		<p class="row col-lg-12" align="left">{{ content }}</p>
-	</div>
-	<div class="row col-lg-12">
-		<button type="button" class="btn btn-success" (click)="addLovIt()">Love it</button>
-		<button type="button" class="btn btn-danger" (click)="addDontLovIt()">Don't love it</button>
+<div class="row">
+	<div class="col-lg-12 post"  [ngClass]="{'greenBack': post.loveIts > post.dontLoveIt, 
+												'redBack':  post.loveIts < post.dontLoveIt, 
+												'normalBack':  post.loveIts == post.dontLoveIt	}">
+		<div class="row col-lg-12" [ngClass]="{'greenText': post.loveIts > post.dontLoveIt, 
+												'redText':  post.loveIts < post.dontLoveIt, 
+												'normalText':  post.loveIts == post.dontLoveIt	}">
+			<h3 class="col-lg-8" align="left">{{  post.title }}</h3>
+			<div class="col-lg-4" align="right">{{  post.created_at | date: 'short' }}</div>
+			<p class="row col-lg-12" align="left">{{ post.content }}</p>
+		</div>
+		<div class="row ">
+			<div class="col-lg-12">
+				<button type="button" class="btn btn-success" (click)="addLoveIt()">Love it</button>
+				<button type="button" class="btn btn-danger" (click)="addDontLoveIt()">Don't love it</button>
+				<button type="button" class="btn btn-danger float-right" (click)="removePost()" >Supprimer</button>
+			</div>
+		</div>
 	</div>
 </div>
 <!-- 
